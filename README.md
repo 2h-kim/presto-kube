@@ -13,8 +13,8 @@
 - helm : v3.10.0
 
 ## docker repo
-docker repo is on personal docker repositories : `kgg6008/presto:20220924`
-docker image is build by presto-cluster repo : [link][https://github.com/2h-kim/presto-cluster]
+- ocker repo is on personal docker repositories : `kgg6008/presto:20220924`
+- docker image is build by presto-cluster repo : (link|https://github.com/2h-kim/presto-cluster)
 
 ## run
 ```bash
