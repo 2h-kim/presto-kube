@@ -1,0 +1,37 @@
+server:
+  workers: 4
+  node:
+    environment: "production"
+  log:
+    level: "INFO"
+  config:
+    path: /usr/lib/presto/etc
+    port: 8080
+    query:
+      maxMemory: "5GB"
+      maxMemoryPerNode: "2GB"
+  jvm:
+    memory: "16G"
+    g1:
+        heapRegionSize: "32M"
+
+image:
+  repository: kgg6008/presto
+  pullPolicy: IfNotPresent
+  tag: "20220924"
+
+service:
+  type: ClusterIP
+  
+autoscaling:
+  enabled: true
+  minReplicas: 4
+  maxReplicas: 10
+  targetCPUUtilizationPercentage: 80
+  targetMemoryUtilizationPercentage: 80
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
